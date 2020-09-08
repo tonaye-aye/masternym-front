@@ -1,0 +1,20 @@
+{
+  "name": "masternym-front",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "gridsome": "^0.7.0",
+    "vuetify": "^2.3.10"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/vue-fontawesome": "^2.0.0",
+    "webpack-node-externals": "^2.5.2"
+  }
+}
