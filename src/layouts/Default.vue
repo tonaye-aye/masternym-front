@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app dark :elevation="2">
+    <v-app-bar dark :elevation="20" class="flex-grow-0">
       <g-link to="/">
         <g-image src="~/assets/logo.png" width="120" class="mt-1" />
       </g-link>
@@ -10,7 +10,7 @@
       </g-link>
     </v-app-bar>
     <v-main>
-      <slot :searchText="searchText" />
+      <slot />
     </v-main>
     <v-footer
       class="text-center d-block pt-4 pb-6 text-overline font-weight-light black"

@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <v-banner app :sticky="sticky" dark color="amber accent-4">
+    <v-banner app dark color="amber accent-4">
       <p
         class="text-center text-md-h5 font-weight-light black--text text--lighten-3"
       >
