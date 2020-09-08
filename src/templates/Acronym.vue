@@ -1,8 +1,8 @@
 <template>
   <Layout>
-    <v-container fluid>
+    <v-container>
       <v-row>
-        <v-col sm="10" offset-sm="1">
+        <v-col sm="8" offset-sm="2">
           <v-card :elevation="20">
             <v-card-title class="text-h3">
               {{ $page.acronym.short }}
