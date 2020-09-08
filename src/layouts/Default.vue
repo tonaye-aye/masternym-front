@@ -1,36 +1,23 @@
 <template>
-  <v-app class="overflow-hidden">
+  <v-app>
     <v-app-bar app dark :elevation="2">
       <g-link to="/">
-        <g-image src="~/assets/logo.png" width="30" class="mt-1" />
+        <g-image src="~/assets/logo.png" width="120" class="mt-1" />
       </g-link>
-      <v-text-field
-        autofocus
-        :elevation="24"
-        v-model="searchText"
-        @click:clear="searchText = ''"
-        placeholder="Search"
-        style="max-width: 320px"
-        class="mx-auto"
-        prepend-inner-icon="mdi-magnify"
-        color="white"
-        clearable
-        solo
-        hide-details
-      />
+      <v-spacer></v-spacer>
       <g-link to="/about">
         <v-btn text small>About</v-btn>
       </g-link>
     </v-app-bar>
     <v-main>
-      <v-container>
-        <v-row>
-          <v-col sm="10" offset-sm="1">
-            <slot :searchText="searchText" />
-          </v-col>
-        </v-row>
-      </v-container>
+      <slot :searchText="searchText" />
     </v-main>
+    <v-footer
+      app
+      class="text-center d-block pt-4 pb-6 text-overline font-weight-light black"
+    >
+      2020 — Managed Services
+    </v-footer>
   </v-app>
 </template>
 
@@ -42,16 +29,6 @@ query {
   }
 }
 </static-query>
-
-<script>
-export default {
-  data() {
-    return {
-      searchText: ""
-    };
-  }
-};
-</script>
 
 <style scoped>
 .v-app-bar a {
