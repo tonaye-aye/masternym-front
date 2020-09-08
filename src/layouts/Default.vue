@@ -1,10 +1,23 @@
 <template>
   <v-app class="overflow-hidden">
-    <v-app-bar app dark :elevation="6">
+    <v-app-bar app dark :elevation="2">
       <g-link to="/">
         <g-image src="~/assets/logo.png" width="140" class="mt-1" />
       </g-link>
-      <v-spacer />
+      <v-text-field
+        autofocus
+        :elevation="24"
+        v-model="searchText"
+        @click:clear="searchText = ''"
+        placeholder="Search"
+        style="max-width: 320px"
+        class="mx-auto"
+        prepend-inner-icon="mdi-magnify"
+        color="white"
+        clearable
+        solo
+        hide-details
+      />
       <g-link to="/about">
         <v-btn text small>About</v-btn>
       </g-link>
@@ -13,7 +26,7 @@
       <v-container>
         <v-row>
           <v-col sm="10" offset-sm="1">
-            <slot />
+            <slot :searchText="searchText" />
           </v-col>
         </v-row>
       </v-container>
@@ -29,6 +42,16 @@ query {
   }
 }
 </static-query>
+
+<script>
+export default {
+  data() {
+    return {
+      searchText: ""
+    };
+  }
+};
+</script>
 
 <style scoped>
 .v-app-bar a {

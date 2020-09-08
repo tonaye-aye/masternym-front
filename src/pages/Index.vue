@@ -1,20 +1,5 @@
 <template>
-  <Layout>
-    <v-text-field
-      autofocus
-      :elevation="24"
-      v-model="searchText"
-      @click:clear="searchText = ''"
-      placeholder="Search"
-      style="max-width: 320px"
-      class="mx-auto"
-      prepend-inner-icon="mdi-magnify"
-      color="white"
-      clearable
-      dense
-      solo
-      hide-details
-    />
+  <Layout v-slot="{ searchText }">
     <v-row class="justify-center align-center">
       <v-card
         :elevation="24"
@@ -63,8 +48,7 @@ export default {
   },
   data() {
     return {
-      acronyms: [],
-      searchText: ""
+      acronyms: []
     };
   },
   mounted() {
