@@ -2,7 +2,7 @@
   <Layout>
     <v-banner app :sticky="sticky" dark color="amber accent-4">
       <p
-        class="text-center text-h5 font-weight-light black--text text--lighten-3"
+        class="text-center text-md-h5 font-weight-light black--text text--lighten-3"
       >
         Mastercard acronyms, all in one place.
       </p>

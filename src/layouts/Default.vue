@@ -13,7 +13,6 @@
       <slot :searchText="searchText" />
     </v-main>
     <v-footer
-      app
       class="text-center d-block pt-4 pb-6 text-overline font-weight-light black"
     >
       2020 — Managed Services
