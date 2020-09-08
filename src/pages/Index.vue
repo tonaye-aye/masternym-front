@@ -57,7 +57,7 @@
 
 <page-query>
 query {
-  acronyms: allAcronym {
+  acronyms: allAcronym(sortBy: "short", order: ASC) {
     edges {
       node {
         id
@@ -89,9 +89,11 @@ export default {
       let x = searchText.toLowerCase();
       return this.acronyms.filter((edge) => {
         if (edge.node.short.toLowerCase().includes(x)) {
-          return edge.node.short.toLowerCase().includes(x);
+          let match = edge.node.short.toLowerCase().includes(x);
+          return match;
         } else if (edge.node.long.toLowerCase().includes(x)) {
-          return edge.node.long.toLowerCase().includes(x);
+          let match = edge.node.long.toLowerCase().includes(x);
+          return match;
         }
       });
     }

@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar dark :elevation="20" class="flex-grow-0">
       <g-link to="/">
-        <g-image src="~/assets/logo.png" width="120" class="mt-1" />
+        <g-image src="~/assets/logo.png" width="100" class="mt-1" />
       </g-link>
       <v-spacer></v-spacer>
       <g-link to="/about">
