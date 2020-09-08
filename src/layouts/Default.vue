@@ -2,7 +2,7 @@
   <v-app class="overflow-hidden">
     <v-app-bar app dark :elevation="2">
       <g-link to="/">
-        <g-image src="~/assets/logo.png" width="140" class="mt-1" />
+        <g-image src="~/assets/logo.png" width="30" class="mt-1" />
       </g-link>
       <v-text-field
         autofocus
