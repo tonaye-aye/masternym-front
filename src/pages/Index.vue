@@ -41,7 +41,7 @@
                   @click="$router.push(`/acronyms/${edge.node.short}`)"
                   color="amber darken-1"
                   text
-                >Details</v-btn>
+                >Expand</v-btn>
               </v-card-actions>
             </v-card>
           </v-row>
