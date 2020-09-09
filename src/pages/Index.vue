@@ -1,15 +1,12 @@
 <template>
   <Layout>
-    <v-banner app dark color="amber accent-4">
-      <p
-        class="text-center text-md-h5 font-weight-light black--text text--lighten-3"
-      >Mastercard's acronym dictionary.</p>
+    <v-banner app dark class="orange accent-2">
       <v-text-field
         autofocus
         :elevation="2"
         v-model="searchText"
         @click:clear="searchText = ''"
-        placeholder="Search"
+        placeholder="Search acronyms fast..."
         style="max-width: 320px;"
         class="mx-auto"
         prepend-inner-icon="mdi-magnify"
@@ -42,7 +39,7 @@
               <v-card-actions>
                 <v-btn
                   @click="$router.push(`/acronyms/${edge.node.short}`)"
-                  color="orange"
+                  color="amber darken-1"
                   text
                 >Details</v-btn>
               </v-card-actions>

@@ -3,18 +3,26 @@
     <v-container class="d-flex flex-grow-1">
       <v-row>
         <v-col sm="8" offset-sm="2">
-          <v-card :elevation="2">
-            <v-card-title class="text-h3">
-              {{ $page.acronym.short }}
-            </v-card-title>
-            <v-card-subtitle class="text-overline">
-              {{ $page.acronym.long }}
-            </v-card-subtitle>
-            <v-divider></v-divider>
+          <v-card class="mx-auto">
+            <v-card-title class="text-h3">{{ $page.acronym.short }}</v-card-title>
+            <v-card-subtitle class="text-subtitle-1 font-weight-light">{{ $page.acronym.long }}</v-card-subtitle>
             <v-card-text>
-              <div class="text-caption">Example</div>
-              <div class="text-overline">{{ $page.acronym.example }}</div>
+              <blockquote class="blockquote grey darken-4 darken-3">
+                <span class="text-caption font-italic">Example:</span>
+                <br />
+                <span class="text-overline white--text">{{ $page.acronym.example }}</span>
+              </blockquote>
             </v-card-text>
+            <v-card-actions>
+              <v-btn text color="amber darken-1" @click="$router.push(`/`)">Back to search</v-btn>
+              <v-spacer></v-spacer>
+              <v-btn icon>
+                <v-icon>mdi-heart</v-icon>
+              </v-btn>
+              <v-btn icon>
+                <v-icon>mdi-share-variant</v-icon>
+              </v-btn>
+            </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
@@ -37,8 +45,8 @@ query ($id: ID!) {
 export default {
   metaInfo() {
     return {
-      title: this.$page.acronym.short
+      title: this.$page.acronym.short,
     };
-  }
+  },
 };
 </script>
