@@ -14,7 +14,7 @@
               </blockquote>
             </v-card-text>
             <v-card-actions>
-              <v-btn text color="amber darken-1" @click="$router.push(`/`)">Back to search</v-btn>
+              <v-btn text color="amber darken-1" @click="$router.push(`/`)">Back</v-btn>
               <v-spacer></v-spacer>
               <v-btn icon>
                 <v-icon>mdi-heart</v-icon>
