@@ -2,12 +2,40 @@
   <v-app>
     <v-app-bar dark :elevation="20" class="flex-grow-0">
       <g-link to="/">
-        <g-image src="~/assets/logo.png" width="100" class="mt-1" />
+        <g-image src="~/assets/mc_symbol.svg" width="50" class="mt-2" />
+      </g-link>
+      <g-link to="/acronyms" class="ml-4">
+        <v-btn>Acronyms</v-btn>
       </g-link>
       <v-spacer></v-spacer>
-      <g-link to="/about">
-        <v-btn text small>About</v-btn>
-      </g-link>
+      <v-dialog v-model="dialog" persistent max-width="290">
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn color="warning" text v-bind="attrs" v-on="on">
+            About
+          </v-btn>
+        </template>
+        <v-card>
+          <v-card-title class="headline">
+            Who are we?
+          </v-card-title>
+          <v-card-text>
+            <p>
+              Masternym is a an acronym database, for the Mastercard team and
+              beyond.
+            </p>
+            <p>
+              Want to submit an acronym?
+              <a class="amber--text">Contact us today</a>.
+            </p>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="orange darken-1" text @click="dialog = false">
+              Close
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-app-bar>
     <v-main>
       <slot />
@@ -28,6 +56,16 @@ query {
   }
 }
 </static-query>
+
+<script>
+export default {
+  data() {
+    return {
+      dialog: false
+    };
+  }
+};
+</script>
 
 <style scoped>
 .v-app-bar a {

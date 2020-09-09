@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: "Acronyms",
+  siteName: "Masternym",
   siteDescription: "Search and discover Mastercard acronyms.",
   plugins: []
 };
