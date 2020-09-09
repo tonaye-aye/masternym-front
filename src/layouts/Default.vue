@@ -17,10 +17,8 @@
               and scalable.
             </p>
             <p>
-              Have any questions, thoughts or feedback? Get in touch with us,
-              <a
-                class="amber--text"
-              >here</a>.
+              Have any questions, thoughts or feedback?
+              <a class="amber--text">Get in touch with us</a>
             </p>
           </v-card-text>
           <v-card-actions>
