@@ -34,7 +34,8 @@ module.exports = function(api) {
         path: "/acronyms/" + acronym.short,
         short: acronym.short,
         long: acronym.long,
-        example: acronym.example
+        example: acronym.example,
+        updatedAt: acronym.updatedAt
       });
     }
   });

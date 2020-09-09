@@ -2,15 +2,12 @@
   <v-app>
     <v-app-bar dark :elevation="20" class="flex-grow-0">
       <g-link to="/">
-        <g-image src="~/assets/mc_symbol.svg" width="50" class="mt-2" />
-      </g-link>
-      <g-link to="/acronyms" class="ml-4">
-        <v-btn>Acronyms</v-btn>
+        <g-image src="~/assets/mc_symbol.svg" width="50" />
       </g-link>
       <v-spacer></v-spacer>
       <v-dialog v-model="dialog" persistent max-width="290">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn color="warning" text v-bind="attrs" v-on="on">
+          <v-btn v-bind="attrs" v-on="on">
             About
           </v-btn>
         </template>
@@ -24,7 +21,7 @@
               beyond.
             </p>
             <p>
-              Want to submit an acronym?
+              Want to submit an acronym?<br />
               <a class="amber--text">Contact us today</a>.
             </p>
           </v-card-text>

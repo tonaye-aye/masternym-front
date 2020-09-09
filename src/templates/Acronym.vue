@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <v-container>
+    <v-container class="d-flex flex-grow-1">
       <v-row>
         <v-col sm="8" offset-sm="2">
           <v-card :elevation="2">
