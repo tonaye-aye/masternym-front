@@ -20,7 +20,7 @@
           </p>
           <p>
             Have any questions, thoughts or feedback?
-            <a class="yellow--text">Get in touch with us</a>
+            <a class="white--text">Get in touch with us</a>
           </p>
         </v-card-text>
         <v-card-actions>

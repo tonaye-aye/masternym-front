@@ -4,10 +4,14 @@
     <v-main>
       <slot />
     </v-main>
-    <!-- <v-footer
-      class="text-center d-block pt-4 pb-6 text-overline font-weight-light black"
-    >2020 — Mastercard, Sydney</v-footer>-->
-    <Footer />
+    <v-footer color="primary lighten-1" padless>
+      <v-row justify="center" no-gutters>
+        <v-col class="grey darken-4 py-4 text-center white--text text-overline" cols="12">
+          {{ new Date().getFullYear() }} —
+          Masternym by Digital Studio team
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
@@ -22,12 +26,10 @@ query {
 
 <script>
 import Nav from "~/components/Nav.vue";
-import Footer from "~/components/Footer.vue";
 
 export default {
   components: {
     Nav,
-    Footer,
   },
 };
 </script>
