@@ -3,9 +3,7 @@
     <v-banner app dark color="amber accent-4">
       <p
         class="text-center text-md-h5 font-weight-light black--text text--lighten-3"
-      >
-        Mastercard's acronym dictionary.
-      </p>
+      >Mastercard's acronym dictionary.</p>
       <v-text-field
         autofocus
         :elevation="2"
@@ -35,17 +33,18 @@
             >
               <v-card-title>{{ edge.node.short }}</v-card-title>
 
-              <v-card-subtitle class="pb-0">{{
+              <v-card-subtitle class="pb-0">
+                {{
                 edge.node.long
-              }}</v-card-subtitle>
+                }}
+              </v-card-subtitle>
 
               <v-card-actions>
                 <v-btn
                   @click="$router.push(`/acronyms/${edge.node.short}`)"
                   color="orange"
                   text
-                  >Details</v-btn
-                >
+                >Details</v-btn>
               </v-card-actions>
             </v-card>
           </v-row>
@@ -73,12 +72,12 @@ query {
 <script>
 export default {
   metaInfo: {
-    title: "Acronyms"
+    title: "Acronyms",
   },
   data() {
     return {
       acronyms: [],
-      searchText: ""
+      searchText: "",
     };
   },
   mounted() {
@@ -89,14 +88,12 @@ export default {
       let x = searchText.toLowerCase();
       return this.acronyms.filter((edge) => {
         if (edge.node.short.toLowerCase().includes(x)) {
-          let match = edge.node.short.toLowerCase().includes(x);
-          return match;
+          return edge.node.short.toLowerCase().includes(x);
         } else if (edge.node.long.toLowerCase().includes(x)) {
-          let match = edge.node.long.toLowerCase().includes(x);
-          return match;
+          return edge.node.long.toLowerCase().includes(x);
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>

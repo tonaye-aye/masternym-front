@@ -7,29 +7,25 @@
       <v-spacer></v-spacer>
       <v-dialog v-model="dialog" persistent max-width="290">
         <template v-slot:activator="{ on, attrs }">
-          <v-btn v-bind="attrs" v-on="on">
-            About
-          </v-btn>
+          <v-btn v-bind="attrs" v-on="on">About</v-btn>
         </template>
         <v-card>
-          <v-card-title class="headline">
-            Who are we?
-          </v-card-title>
+          <v-card-title class="headline">About us</v-card-title>
           <v-card-text>
             <p>
-              Masternym is a an acronym database, for the Mastercard team and
-              beyond.
+              Masternym is a an acronym database that is super-fast, flexible
+              and scalable.
             </p>
             <p>
-              Want to submit an acronym?<br />
-              <a class="amber--text">Contact us today</a>.
+              Have any questions, thoughts or feedback? Get in touch with us,
+              <a
+                class="amber--text"
+              >here</a>.
             </p>
           </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="orange darken-1" text @click="dialog = false">
-              Close
-            </v-btn>
+            <v-btn color="orange darken-1" text @click="dialog = false">Close</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -39,9 +35,7 @@
     </v-main>
     <v-footer
       class="text-center d-block pt-4 pb-6 text-overline font-weight-light black"
-    >
-      2020 — Managed Services
-    </v-footer>
+    >2020 — Managed Services</v-footer>
   </v-app>
 </template>
 
@@ -58,9 +52,9 @@ query {
 export default {
   data() {
     return {
-      dialog: false
+      dialog: false,
     };
-  }
+  },
 };
 </script>
 
