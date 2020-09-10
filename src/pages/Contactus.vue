@@ -7,7 +7,6 @@
           <v-card-title class="text-h3">Contact us</v-card-title>
           <v-form
             ref="form"
-            v-model="valid"
             lazy-validation
             name="contact"
             method="post"
@@ -28,10 +27,18 @@
               v-model="formData.name"
               :counter="10"
               :rules="nameRules"
+              name="name"
               label="Name"
               required
             ></v-text-field>
-            <v-text-field solo v-model="formData.email" :rules="emailRules" label="E-mail" required></v-text-field>
+            <v-text-field
+              solo
+              v-model="formData.email"
+              :rules="emailRules"
+              name="email"
+              label="E-mail"
+              required
+            ></v-text-field>
             <v-textarea
               solo
               clearable
@@ -58,22 +65,22 @@ export default {
   name: "Contact",
   data() {
     return {
-      // valid: true,
-      // name: "",
-      // nameRules: [
-      //   (v) => !!v || "Name is required",
-      //   (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
-      // ],
-      // email: "",
-      // emailRules: [
-      //   (v) => !!v || "E-mail is required",
-      //   (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
-      // ],
-      // message: "",
-      // messageRules: [
-      //   (v) => !!v || "Message is required",
-      //   (v) => (v && v.length <= 250) || "Send us your thoughts and feedback",
-      // ],
+      valid: true,
+      name: "",
+      nameRules: [
+        (v) => !!v || "Name is required",
+        (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
+      ],
+      email: "",
+      emailRules: [
+        (v) => !!v || "E-mail is required",
+        (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+      ],
+      message: "",
+      messageRules: [
+        (v) => !!v || "Message is required",
+        (v) => (v && v.length <= 250) || "Send us your thoughts and feedback",
+      ],
       formData: {},
     };
   },
