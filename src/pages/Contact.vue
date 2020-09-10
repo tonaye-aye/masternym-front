@@ -9,7 +9,7 @@
             v-model="valid"
             name="contact"
             method="post"
-            v-on:submit.prevent="validate_submit(e)"
+            v-on:submit.prevent="validate_submit"
             action="/thanks/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
@@ -46,6 +46,10 @@
               v-model="formData.message"
               :rules="messageRules"
               label="Message"
+              auto-grow
+              no-resize
+              clear-icon
+              color="white"
             ></v-textarea>
 
             <v-btn :disabled="!valid" type="submit">Submit form</v-btn>
@@ -63,6 +67,7 @@ export default {
   },
   data() {
     return {
+      valid: true,
       formData: {},
       nameRules: [
         (v) => !!v || "Name is required",
@@ -88,18 +93,16 @@ export default {
         .join("&");
     },
     validate_submit(e) {
-      if (this.$refs.form.validate()) {
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: this.encode({
-            "form-name": e.target.getAttribute("name"),
-            ...this.formData,
-          }),
-        })
-          .then(() => this.$router.push("/thanks"))
-          .catch((error) => alert(error));
-      }
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: this.encode({
+          "form-name": e.target.getAttribute("name"),
+          ...this.formData,
+        }),
+      })
+        .then(() => this.$router.push("/thanks"))
+        .catch((error) => alert(error));
     },
   },
 };
