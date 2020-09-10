@@ -18,14 +18,17 @@
             Masternym is a an acronym database that is super-fast, flexible
             and scalable.
           </p>
-          <p>
-            Have any questions, thoughts or feedback?
-            <a class="white--text">Get in touch with us</a>
-          </p>
+          <p>Have any questions, thoughts or feedback? Get in touch below.</p>
         </v-card-text>
         <v-card-actions>
+          <v-btn
+            text
+            @click="$router.push(`/contactus/`)"
+            color="amber darken-1"
+            class="ml-2"
+          >Contact us</v-btn>
           <v-spacer></v-spacer>
-          <v-btn color="amber darken-1" text @click="dialog = false">Close</v-btn>
+          <v-btn text @click="dialog = false">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
