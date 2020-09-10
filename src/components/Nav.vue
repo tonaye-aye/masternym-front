@@ -23,7 +23,7 @@
         <v-card-actions>
           <v-btn
             text
-            @click="$router.push(`/contactus/`)"
+            @click="$router.push(`/contact/`)"
             color="amber darken-1"
             class="ml-2"
           >Contact us</v-btn>

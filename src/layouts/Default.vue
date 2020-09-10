@@ -11,7 +11,7 @@
           cols="12"
         >
           {{ new Date().getFullYear() }} —
-          Masternym by Digital Studio team
+          Masternym by Digital Studio Sydney
         </v-col>
       </v-row>
     </v-footer>
