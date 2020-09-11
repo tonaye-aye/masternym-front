@@ -21,14 +21,3 @@ export default {
   },
 };
 </script>
-
-
-
-<v-container class="fill-height" fluid>
-      <v-row align="center" justify="center">
-        <v-col cols="12" sm="8" md="4">
-          <p class="text-h5 font-weight-light grey--text mb-5">/acronyms/{{ $page.acronym.short }}</p>
-
-        </v-col>
-      </v-row>
-    </v-container>
