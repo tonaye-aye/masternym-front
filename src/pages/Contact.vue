@@ -6,10 +6,9 @@
           <div class="text-h4 font-weight-light mb-5">Contact us</div>
           <v-form
             ref="form"
-            v-model="valid"
             name="contact"
             method="post"
-            v-on:submit.prevent="validate_submit"
+            v-model="valid"
             action="/thanks/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
@@ -52,7 +51,7 @@
               color="white"
             ></v-textarea>
 
-            <v-btn :disabled="!valid" type="submit">Submit form</v-btn>
+            <v-btn :disabled="!valid" type="submit" @click="handleSubmit">Submit form</v-btn>
           </v-form>
         </v-col>
       </v-row>
@@ -92,7 +91,7 @@ export default {
         )
         .join("&");
     },
-    validate_submit(e) {
+    handleSubmit(e) {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
