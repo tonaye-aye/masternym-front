@@ -4,7 +4,7 @@
     <v-main>
       <slot />
     </v-main>
-    <v-footer color="primary lighten-1" padless>
+    <v-footer color="primary lighten-1 mt-1" padless>
       <v-row justify="center" no-gutters>
         <v-col
           class="grey darken-4 py-4 text-center white--text text-caption font-weight-light"

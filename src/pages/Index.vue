@@ -16,36 +16,24 @@
         hide-details
       />
     </v-banner>
-    <v-container fluid>
-      <v-row>
-        <v-col sm="10" offset-sm="1">
-          <v-row class="justify-center align-center">
-            <v-card
-              :elevation="2"
-              v-for="edge in searchEvents(searchText)"
-              :key="edge.node.short"
-              max-width="280px"
-              width="100%"
-              class="mt-6 ml-2 mr-2 align-self-stretch align-center"
-            >
-              <v-card-title>{{ edge.node.short }}</v-card-title>
+    <v-container>
+      <v-row class="justify-center align-center">
+        <v-card
+          :elevation="2"
+          v-for="edge in searchEvents(searchText)"
+          :key="edge.node.short"
+          max-width="320px"
+          width="100%"
+          class="mt-4 mx-2 align-self-stretch align-center"
+        >
+          <v-card-title>{{ edge.node.short }}</v-card-title>
 
-              <v-card-subtitle class="pb-0">
-                {{
-                edge.node.long
-                }}
-              </v-card-subtitle>
+          <v-card-subtitle class="pb-1">{{ edge.node.long }}</v-card-subtitle>
 
-              <v-card-actions>
-                <v-btn
-                  @click="$router.push(`/acronyms/${edge.node.short}`)"
-                  color="amber darken-1"
-                  text
-                >Expand</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-row>
-        </v-col>
+          <v-card-actions>
+            <v-btn @click="$router.push(`/acronyms/${edge.node.short}`)" color="orange" text>Learn</v-btn>
+          </v-card-actions>
+        </v-card>
       </v-row>
     </v-container>
   </Layout>

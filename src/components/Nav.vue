@@ -21,12 +21,7 @@
           <p>Have any questions, thoughts or feedback? Get in touch below.</p>
         </v-card-text>
         <v-card-actions>
-          <v-btn
-            text
-            @click="$router.push(`/contact/`)"
-            color="amber darken-1"
-            class="ml-2"
-          >Contact us</v-btn>
+          <v-btn text @click="$router.push(`/contact/`)" color="orange" class="ml-2">Contact us</v-btn>
           <v-spacer></v-spacer>
           <v-btn text @click="dialog = false">Close</v-btn>
         </v-card-actions>

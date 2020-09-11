@@ -3,57 +3,80 @@
     <v-container class="fill-height" fluid>
       <v-row align="center" justify="center">
         <v-col cols="12" sm="8" md="4">
-          <div class="text-h5 font-weight-light mb-5">Contact us</div>
-          <v-form
-            ref="form"
-            name="contact"
-            method="post"
-            v-on:submit.prevent="handleSubmit"
-            v-model="valid"
-            action="/thanks/"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden>
-              <label>
-                Don’t fill this out:
-                <input name="bot-field" />
-              </label>
-            </p>
+          <p class="text-h5 font-weight-light grey--text mb-5">/Contact</p>
+          <v-card class="pa-4">
+            <p class="text-overline font-weight-light">Contact us</p>
 
-            <v-text-field
-              solo
-              type="text"
-              name="name"
-              v-model="formData.name"
-              :rules="nameRules"
-              label="Name"
-            />
+            <v-form
+              autocomplete="off"
+              ref="form"
+              name="contact"
+              method="post"
+              v-on:submit.prevent="handleSubmit"
+              v-model="valid"
+              action="/thanks/"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p hidden>
+                <label>
+                  Don’t fill this out:
+                  <input name="bot-field" />
+                </label>
+              </p>
 
-            <v-text-field
-              solo
-              type="email"
-              name="email"
-              v-model="formData.email"
-              :rules="emailRules"
-              label="Email"
-            />
+              <v-text-field
+                solo
+                dense
+                background-color="grey darken-3"
+                color="orange accent-2"
+                append-icon="mdi-face"
+                type="text"
+                name="name"
+                v-model="formData.name"
+                :rules="nameRules"
+                label="Your name"
+              />
 
-            <v-textarea
-              solo
-              name="message"
-              v-model="formData.message"
-              :rules="messageRules"
-              label="Message"
-              auto-grow
-              no-resize
-              clear-icon
-              color="white"
-            ></v-textarea>
+              <v-text-field
+                solo
+                dense
+                background-color="grey darken-3"
+                color="orange"
+                append-icon="mdi-email"
+                type="email"
+                name="email"
+                v-model="formData.email"
+                :rules="emailRules"
+                label="Email address"
+              />
 
-            <v-btn :disabled="!valid" type="submit" @click="validate">Submit form</v-btn>
-          </v-form>
+              <v-textarea
+                solo
+                background-color="grey darken-3"
+                color="orange"
+                append-icon="mdi-comment"
+                name="message"
+                v-model="formData.message"
+                :rules="messageRules"
+                label="Message here..."
+                auto-grow
+                no-resize
+                clearable
+                :counter="200"
+              ></v-textarea>
+
+              <v-btn
+                color="orange black--text"
+                :disabled="!valid"
+                type="submit"
+                @click="validate"
+                class="mr-4"
+              >Send</v-btn>
+              <v-btn @click="reset">Clear</v-btn>
+            </v-form>
+          </v-card>
         </v-col>
       </v-row>
     </v-container>
@@ -80,13 +103,16 @@ export default {
       messageRules: [
         (v) => !!v || "Message is required",
         (v) =>
-          (v && v.length <= 250) || "Message must be less than 250 characters",
+          (v && v.length <= 200) || "Message must be less than 200 characters",
       ],
     };
   },
   methods: {
     validate() {
       this.$refs.form.validate();
+    },
+    reset() {
+      this.$refs.form.reset();
     },
     encode(data) {
       return Object.keys(data)
