@@ -3,11 +3,12 @@
     <v-container class="fill-height" fluid>
       <v-row align="center" justify="center">
         <v-col cols="12" sm="8" md="4">
-          <div class="text-h4 font-weight-light mb-5">Contact us</div>
+          <div class="text-h5 font-weight-light mb-5">Contact us</div>
           <v-form
             ref="form"
             name="contact"
             method="post"
+            v-on:submit.prevent="handleSubmit"
             v-model="valid"
             action="/thanks/"
             data-netlify="true"
@@ -51,7 +52,7 @@
               color="white"
             ></v-textarea>
 
-            <v-btn :disabled="!valid" type="submit" @click="handleSubmit">Submit form</v-btn>
+            <v-btn :disabled="!valid" type="submit" @click="validate">Submit form</v-btn>
           </v-form>
         </v-col>
       </v-row>
@@ -66,8 +67,8 @@ export default {
   },
   data() {
     return {
-      valid: true,
       formData: {},
+      valid: true,
       nameRules: [
         (v) => !!v || "Name is required",
         (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
@@ -84,6 +85,9 @@ export default {
     };
   },
   methods: {
+    validate() {
+      this.$refs.form.validate();
+    },
     encode(data) {
       return Object.keys(data)
         .map(
