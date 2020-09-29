@@ -6,6 +6,8 @@ import Vuetify from "vuetify";
 import "vuetify/dist/vuetify.min.css";
 import DefaultLayout from "~/layouts/Default.vue";
 
+import "~/assets/styles.scss";
+
 export default function(Vue, { appOptions, head }) {
   head.link.push({
     rel: "stylesheet",
